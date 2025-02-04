@@ -24,7 +24,11 @@ def main():
 
 def organize_folder(files):
     for file in files:
-        print(file.name)
+        if os.path.isdir(file):
+            continue
+
+        fileName, extension = os.path.splitext(file.name)
+        print(extension)
 
 if __name__ == "__main__":
     main()
