@@ -26,12 +26,15 @@ def organize_folder(path):
     for file in files:
 
         if os.path.isdir(file):
+            if "Files" in file.name:
+                continue
             continue
 
         fileName, extension = os.path.splitext(file.name)
         print(extension)
 
         folderName = extension.capitalize() + " Files"
+
 
 if __name__ == "__main__":
     main()
