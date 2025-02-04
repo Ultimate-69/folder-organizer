@@ -19,10 +19,12 @@ def main():
             print("Please provide a folder, not a file!")
             isValidPath = False
 
-        
+    files = os.scandir(path)
+    organize_folder(files)
 
-
-
+def organize_folder(files):
+    for file in files:
+        print(file.name)
 
 if __name__ == "__main__":
     main()
