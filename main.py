@@ -1,27 +1,16 @@
 import os
-from tkinter import *
-from tkinter import tkk
+import tkinter as tk
 
 def main():
     isValidPath = False
     path = ""
 
-    # Gets a valid path from the user
-    while not isValidPath:
-        try:
-            path = input("Please enter the path to the directory: ")
-        except ValueError:
-            print("Error! Please try again.")
-            continue
+    root = tk.Tk()
 
-        isValidPath = os.path.exists(path)
-        if not isValidPath:
-            print("Not a valid path!")
-        elif not os.path.isdir(path):
-            print("Please provide a folder, not a file!")
-            isValidPath = False
+    label = tk.Label(root, text="File Organizer")
+    label.pack()
 
-    organize_folder(path)
+    root.mainloop()
 
 def organize_folder(path):
     with os.scandir(path) as files:
