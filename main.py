@@ -1,4 +1,5 @@
 import os
+import shutil
 import tkinter as tk
 from tkinter import filedialog
 
@@ -39,10 +40,10 @@ def organize_folder(path):
                 folderName = "Folders"
                 newPath = os.path.join(path, folderName)
                 if os.path.exists(newPath):
-                    os.replace(file.path, os.path.join(newPath, file.name))
+                    shutil.move(file.path, os.path.join(newPath, file.name))
                 else:
                     os.mkdir(newPath)
-                    os.replace(file.path, os.path.join(newPath, file.name))
+                    shutil.move(file.path, os.path.join(newPath, file.name))
                     
                 continue
 
