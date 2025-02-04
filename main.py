@@ -6,9 +6,9 @@ def main():
     path = ""
 
     root = tk.Tk()
-
-    label = tk.Label(root, text="File Organizer")
-    label.pack()
+    root.geometry("400x400")
+    root.title("File Organizer")
+    content = tk.Frame(root)
 
     root.mainloop()
 

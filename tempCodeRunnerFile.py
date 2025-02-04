@@ -1,0 +1,2 @@
+
+    content = tk.Frame(root)
