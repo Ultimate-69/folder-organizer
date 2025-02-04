@@ -9,6 +9,8 @@ def main():
     root = tk.Tk()
     root.geometry("400x400")
     root.title("File Organizer")
+    root.configure(bg="gray")
+
     content = tk.Frame(root)
     button = tk.Button(root, text="Organize Folder...", command= lambda: get_directory(root))
     button.pack()
