@@ -1,5 +1,6 @@
 import os
 import tkinter as tk
+from tkinter import filedialog
 
 def main():
     isValidPath = False
@@ -9,8 +10,21 @@ def main():
     root.geometry("400x400")
     root.title("File Organizer")
     content = tk.Frame(root)
+    button = tk.Button(root, text="Organize Folder...", command= lambda: get_directory(root))
+    button.pack()
 
     root.mainloop()
+
+def get_directory(root):
+    directory = filedialog.askdirectory()
+    if directory != "" and directory != None:
+        if os.path.exists(directory):
+            print(directory)
+            if os.path.isdir(directory):
+                organize_folder(path)
+                label = tk.Label(root, text="Successfully Organized!")
+                label.pack()
+            
 
 def organize_folder(path):
     with os.scandir(path) as files:
