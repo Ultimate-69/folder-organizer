@@ -4,6 +4,7 @@ def main():
     isValidPath = False
     path = ""
 
+    # Gets a valid path from the user
     while not isValidPath:
         try:
             path = input("Please enter the path to the directory: ")
@@ -17,6 +18,8 @@ def main():
         elif not os.path.isdir(path):
             print("Please provide a folder, not a file!")
             isValidPath = False
+
+        
 
 
 
