@@ -26,7 +26,7 @@ def organize_folder(path):
         for file in files:
 
             if os.path.isdir(file):
-                if "Files" in file.name:
+                if "Files" in file.name or "Folders" in file.name:
                     continue
 
                 folderName = "Folders"
