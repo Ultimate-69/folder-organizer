@@ -21,7 +21,7 @@ def get_directory(root):
         if os.path.exists(directory):
             print(directory)
             if os.path.isdir(directory):
-                organize_folder(path)
+                organize_folder(directory)
                 label = tk.Label(root, text="Successfully Organized!")
                 label.pack()
             
