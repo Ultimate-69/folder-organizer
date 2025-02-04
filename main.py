@@ -19,16 +19,19 @@ def main():
             print("Please provide a folder, not a file!")
             isValidPath = False
 
-    files = os.scandir(path)
-    organize_folder(files)
+    organize_folder(path)
 
-def organize_folder(files):
+def organize_folder(path):
+    files = os.scandir(path)
     for file in files:
+
         if os.path.isdir(file):
             continue
 
         fileName, extension = os.path.splitext(file.name)
         print(extension)
+
+        folderName = extension.capitalize() + " Files"
 
 if __name__ == "__main__":
     main()
